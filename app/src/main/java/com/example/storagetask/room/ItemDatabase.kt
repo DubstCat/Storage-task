@@ -1,9 +1,10 @@
-package com.example.storagetask
+package com.example.storagetask.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.storagetask.data.Item
 
 @Database(entities = [Item::class], version = 1, exportSchema = false)
 abstract class ItemDatabase: RoomDatabase() {

@@ -4,6 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.storagetask.data.Item
+import com.example.storagetask.room.ItemDatabase
+import com.example.storagetask.room.ItemRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,6 +28,17 @@ class ItemViewModel(application: Application): AndroidViewModel(application) {
     fun nukeTable(){
         viewModelScope.launch(Dispatchers.IO){
             repository.nukeTable()
+        }
+    }
+    fun delete(item: Item){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.delete(item)
+        }
+    }
+
+    fun update(name: String, age: String, breed: String, item_id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.update(name, age, breed, item_id)
         }
     }
 }

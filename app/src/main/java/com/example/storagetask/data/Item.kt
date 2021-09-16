@@ -1,4 +1,4 @@
-package com.example.storagetask
+package com.example.storagetask.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
